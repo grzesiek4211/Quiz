@@ -1,0 +1,34 @@
+.dobrze {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px 10px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 20px;
+}
+
+.zle {
+    -fx-background-color: #f44336; /* Red */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px 10px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 20px;
+}
+
+.label {
+    -fx-font-size: 25px;
+}
+
+.time {
+    -fx-background-color: #f44336; /* red */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 15px 45px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 30px;
+    -fx-background-radius: 50%;
+}

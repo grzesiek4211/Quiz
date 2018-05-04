@@ -1,0 +1,30 @@
+.button {
+    -fx-background-color: #008CBA; /* Blue */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px 10px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 20px;
+}
+
+.label {
+    -fx-font-size: 25px;
+}
+
+.time {
+    -fx-background-color: #f44336; /* red */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 15px 45px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 30px;
+    -fx-background-radius: 50%;
+}
+
+.answer {
+    -fx-background-color: #0099FF;
+    -fx-padding: 15px 15px;
+    -fx-background-radius: 5px 20px 5px;
+}

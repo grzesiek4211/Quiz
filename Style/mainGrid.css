@@ -1,0 +1,43 @@
+.root {
+    -fx-background-image: url("images/petroturniej.jpg");
+}
+
+.dodaj {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px 10px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 13px;
+}
+
+.usun {
+    -fx-background-color: #f44336; /* Red */
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px 10px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 13px;
+}
+
+.start {
+    -fx-background-color: #555555;
+    -fx-border: none;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 15px 30px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-font-size: 40px;
+    -fx-background-radius: 50%;
+}
+
+.nazwa {
+     -fx-border: none;
+     -fx-text-fill: #ffffff;
+     -fx-padding: 5px 10px;
+     -fx-text-align: center;
+     -fx-text-decoration: none;
+     -fx-font-size: 13px;
+}
