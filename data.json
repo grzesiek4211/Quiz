@@ -8,8 +8,8 @@
 			"answerB": "Zle",
 			"answerC": "Dobrze",
 			"answerD": "Zle",
-			"time": 15,
-			"correctAnswer": "B"
+			"time": 1,
+			"correctAnswer": "Dobrze"
 		},
 		{
 			"id": 1,
@@ -20,7 +20,7 @@
 			"answerC": "Zle",
 			"answerD": "Dobrze",
 			"time": 25,
-			"correctAnswer": "C"
+			"correctAnswer": "Dobrze"
 		},
 		{
 			"id": 2,
@@ -31,7 +31,7 @@
 			"answerC": "Zle",
 			"answerD": "Dobrze",
 			"time": 5,
-			"correctAnswer": "A"
+			"correctAnswer": "Dobrze"
 		},
 		{
 			"id": 3,
@@ -43,7 +43,7 @@
 			"answerC": "Zle",
 			"answerD": "Dobrze",
 			"time": 5,
-			"correctAnswer": "A"
+			"correctAnswer": "Dobrze"
 		},
 		{
 			"id": 4,
@@ -54,7 +54,7 @@
 			"answerC": "Zle",
 			"answerD": "Dobrze",
 			"time": 5,
-			"correctAnswer": "A"
+			"correctAnswer": "Dobrze"
 		},
 		{
 			"id": 5,
