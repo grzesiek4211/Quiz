@@ -50,7 +50,7 @@ public class TClosedQuestionController {
     public void initialize()
     {
         question = ((Map)Main.questions.get(Main.counterQuestion));
-        Main.counterQuestion++;
+        //Main.counterQuestion++;
         buttonA.setText(question.get("answerA").toString());
         buttonB.setText(question.get("answerB").toString());
         buttonC.setText(question.get("answerC").toString());
@@ -82,7 +82,9 @@ public class TClosedQuestionController {
     }
 
     public void OnMouseClicked(MouseEvent mouseEvent) {
+        Main.counterQuestion++;
         Map question = ((Map)Main.questions.get(Main.counterQuestion));
+        System.out.println((Long)question.get("type"));
         new NewScene().setScene(mouseEvent, (Long)question.get("type"));
     }
 
