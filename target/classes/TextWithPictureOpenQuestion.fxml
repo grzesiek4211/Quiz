@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Style/TextWithPictureOpenQuestion.css" fx:controller="sample.Controllers.TWPOpenQuestionController" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Style/TextWithPictureOpenQuestion.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.TWPOpenQuestionController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,7 +28,7 @@
     <children>
         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
             <children>
-                <Label styleClass="time" />
+                <Label fx:id="labelTime" styleClass="time" />
             </children>
         </HBox>
         <Label text="Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker" textAlignment="CENTER" wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="1" />
@@ -36,14 +36,14 @@
             <children>
                 <HBox alignment="BOTTOM_RIGHT" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="dobrze" text="Dobrze!" />
+                        <Button fx:id="buttonDobrze" mnemonicParsing="false" onAction="#OnActionButtonDobrze" styleClass="dobrze" text="Dobrze!" />
                         <Separator orientation="VERTICAL" prefHeight="19.0" prefWidth="0.0" />
-                        <Button mnemonicParsing="false" styleClass="zle" text="Źle!" />
+                        <Button fx:id="buttonZle" mnemonicParsing="false" onAction="#OnActionButtonZle" styleClass="zle" text="Źle!" />
                     </children>
                 </HBox>
             </children>
         </VBox>
-      <ImageView fitHeight="370.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <ImageView fx:id="image" fitHeight="370.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <image>
             <Image url="@../../Style/images/petroturniej.jpg" />
          </image>

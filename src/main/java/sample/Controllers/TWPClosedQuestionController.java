@@ -47,7 +47,7 @@ public class TWPClosedQuestionController {
         buttonB.setText(question.get("answerB").toString());
         buttonC.setText(question.get("answerC").toString());
         buttonD.setText(question.get("answerD").toString());
-        File file = new File("image/ropa1.jpg");
+        File file = new File("../../../../../../images/ropa1.jpg");
         Image picture = new Image(file.toURI().toString());
         image.setImage(picture);
         time = (Long)question.get("time");
@@ -77,8 +77,10 @@ public class TWPClosedQuestionController {
     }
 
     public void OnMouseClicked(MouseEvent mouseEvent) {
+        question = ((Map)Main.questions.get(Main.counterQuestion));
         Main.counterQuestion++;
-        Map question = ((Map)Main.questions.get(Main.counterQuestion));
+        if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
+        System.out.println((Long)question.get("type"));
         new NewScene().setScene(mouseEvent, (Long)question.get("type"));
     }
 

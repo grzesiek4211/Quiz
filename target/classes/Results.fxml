@@ -4,12 +4,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" fx:controller="sample.Controllers.ResController" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Style/Results.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ResController">
    <children>
-      <TableView layoutX="100.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+      <TableView fx:id="table" layoutX="100.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../Style/Results.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
         <columns>
-          <TableColumn prefWidth="500.0" text="Nazwa drużyny" />
-          <TableColumn minWidth="0.0" prefWidth="300.0" sortType="DESCENDING" text="Liczba punktów" />
+            <TableColumn fx:id="id" prefWidth="100.0" styleClass="font" text="id" />
+          <TableColumn fx:id="name" prefWidth="500.0" styleClass="font" text="Nazwa drużyny" />
+          <TableColumn fx:id="points" minWidth="350.0" prefWidth="300.0" sortType="DESCENDING" styleClass="font" text="Liczba punktów" />
         </columns>
       </TableView>
    </children>

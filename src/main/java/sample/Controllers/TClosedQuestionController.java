@@ -39,6 +39,8 @@ public class TClosedQuestionController {
     public Label labelDescription;
     @FXML
     public Button buttonA;
+    @FXML
+    public Button buttonWyniki;
 
     public Map question;
 
@@ -82,8 +84,9 @@ public class TClosedQuestionController {
     }
 
     public void OnMouseClicked(MouseEvent mouseEvent) {
+        question = ((Map)Main.questions.get(Main.counterQuestion));
         Main.counterQuestion++;
-        Map question = ((Map)Main.questions.get(Main.counterQuestion));
+        if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
         System.out.println((Long)question.get("type"));
         new NewScene().setScene(mouseEvent, (Long)question.get("type"));
     }
@@ -109,5 +112,33 @@ public class TClosedQuestionController {
             clicked.setStyle("-fx-background-color: #f44336"); //red
             b4.setStyle("-fx-background-color: #4CAF50"); //green
         }
+    }
+
+    public void OnActionWyniki(ActionEvent actionEvent) {
+        buttonWyniki.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                try {
+                    Parent Results = FXMLLoader.load(getClass().getResource("/Results.fxml"));
+                    Stage stage = new Stage();
+                    stage.setTitle("Aktualne wyniki");
+                    stage.setScene(new Scene(Results, 450, 450));
+                    stage.show();
+                    stage.setFullScreen(true);
+                    stage.setFullScreenExitHint("");
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+
+
+        // Set position of second window, related to primary window.
+        /*newWindow.setX(primaryStage.getX() + 200);
+        newWindow.setY(primaryStage.getY() + 100);
+
+        newWindow.show();*/
     }
 }

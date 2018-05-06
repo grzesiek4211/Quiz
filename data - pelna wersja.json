@@ -1,0 +1,103 @@
+{
+	"questions": [
+		{
+			"id": 0,
+			"type": 0,
+			"description": "Polecenie0",
+			"answerA": "Zle",
+			"answerB": "Zle",
+			"answerC": "Dobrze",
+			"answerD": "Zle",
+			"time": 1,
+			"correctAnswer": "Dobrze"
+		},
+		{
+			"id": 1,
+			"type": 0,
+			"description": "Polecenie1",
+			"answerA": "Zle",
+			"answerB": "Zle",
+			"answerC": "Zle",
+			"answerD": "Dobrze",
+			"time": 25,
+			"correctAnswer": "Dobrze"
+		},
+		{
+			"id": 2,
+			"type": 0,
+			"description": "Polecenie2",
+			"answerA": "Zle",
+			"answerB": "Zle",
+			"answerC": "Zle",
+			"answerD": "Dobrze",
+			"time": 5,
+			"correctAnswer": "Dobrze"
+		},
+		{
+			"id": 3,
+			"type": 1,
+			"description": "Polecenie3",
+			"picture": "sciezka do obrazka",
+			"answerA": "Zle",
+			"answerB": "Zle",
+			"answerC": "Zle",
+			"answerD": "Dobrze",
+			"time": 5,
+			"correctAnswer": "Dobrze"
+		},
+		{
+			"id": 4,
+			"type": 0,
+			"description": "Polecenie4",
+			"answerA": "Zle",
+			"answerB": "Zle",
+			"answerC": "Zle",
+			"answerD": "Dobrze",
+			"time": 5,
+			"correctAnswer": "Dobrze"
+		},
+		{
+			"id": 5,
+			"type": 2,
+			"description": "Polecenie5",
+			"time": 25
+		},
+		{
+			"id": 6,
+			"type": 3,
+			"description": "Polecenie6",
+			"picture": "sciezka do obrazka",
+			"time": 25
+		},
+		{
+			"id": 7,
+			"type": 2,
+			"description": "Polecenie7",
+			"time": 25
+		},
+		{
+			"id": 8,
+			"type": 3,
+			"description": "Polecenie8",
+			"picture": "sciezka do obrazka",
+			"time": 25
+		}
+	],
+	"teams": [
+    	{
+    		"id": 0,
+    		"name": "pierwsza",
+    		"points": 0
+    	},
+    	{
+    		"id": 1,
+    		"name": "druga",
+    		"points": 5
+    	},
+    	{
+    		"id": 2,
+    		"name": "trzecia",
+    		"points": 2
+    	}
+    ]
+}
