@@ -30,8 +30,11 @@ public class TWPClosedQuestionController {
     public Button buttonA;
     @FXML
     public ImageView image;
+    @FXML
+    public Label nameTeam;
 
     public Map question;
+    public Map team;
 
     public CountTime countTime;
 
@@ -42,6 +45,8 @@ public class TWPClosedQuestionController {
     public void initialize()
     {
         question = ((Map)Main.questions.get(Main.counterQuestion));
+        team = ((Map)Main.teams.get(Main.counterTeam));
+        nameTeam.setText(team.get("name").toString());
         //Main.counterQuestion++;
         buttonA.setText(question.get("answerA").toString());
         buttonB.setText(question.get("answerB").toString());
@@ -59,36 +64,38 @@ public class TWPClosedQuestionController {
     }
     public TWPClosedQuestionController() {}
 
-    public void OnActionButtonA(ActionEvent actionEvent) {
+    public void OnActionButtonA(ActionEvent actionEvent) throws Exception {
         setButtons("answerA", "answerB", "answerC", "answerD", buttonA, buttonB, buttonC, buttonD);
     }
 
-    public void OnActionButtonB(ActionEvent actionEvent) {
+    public void OnActionButtonB(ActionEvent actionEvent) throws Exception {
         setButtons("answerB", "answerA", "answerC", "answerD", buttonB, buttonA, buttonC, buttonD);
     }
 
 
-    public void OnActionButtonC(ActionEvent actionEvent) {
+    public void OnActionButtonC(ActionEvent actionEvent) throws Exception {
         setButtons("answerC", "answerB", "answerA", "answerD", buttonC, buttonB, buttonA, buttonD);
     }
 
-    public void OnActionButtonD(ActionEvent actionEvent) {
+    public void OnActionButtonD(ActionEvent actionEvent) throws Exception {
         setButtons("answerD", "answerB", "answerC", "answerA", buttonD, buttonB, buttonC, buttonA);
     }
 
     public void OnMouseClicked(MouseEvent mouseEvent) {
         question = ((Map)Main.questions.get(Main.counterQuestion));
         Main.counterQuestion++;
+        Main.counterTeam++;
+        if(Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
         if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
         System.out.println((Long)question.get("type"));
         new NewScene().setScene(mouseEvent, (Long)question.get("type"));
     }
 
-    public void setButtons(String clicked_answer, String a2, String a3, String a4, Button clicked, Button b2, Button b3, Button b4)
-    {
+    public void setButtons(String clicked_answer, String a2, String a3, String a4, Button clicked, Button b2, Button b3, Button b4) throws Exception {
         countTime.seconds = 0l;
         if(question.get(clicked_answer).toString().equals(question.get("correctAnswer").toString())){
             clicked.setStyle("-fx-background-color: #4CAF50"); //green
+            Main.setPoints(Main.counterTeam, 1);
         }
         else if (question.get(a2).toString().equals(question.get("correctAnswer").toString()))
         {

@@ -13,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -20,6 +22,7 @@ import sample.CountTime;
 import sample.Main;
 import sample.NewScene;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Timer;
@@ -41,10 +44,16 @@ public class TClosedQuestionController {
     public Button buttonA;
     @FXML
     public Button buttonWyniki;
+    @FXML
+    public Label nameTeam;
+    @FXML
+    public ImageView image;
 
     public Map question;
+    public Map team;
 
     public CountTime countTime;
+
 
     Long time;
 
@@ -52,11 +61,20 @@ public class TClosedQuestionController {
     public void initialize()
     {
         question = ((Map)Main.questions.get(Main.counterQuestion));
+        team = ((Map)Main.teams.get(Main.counterTeam));
+
         //Main.counterQuestion++;
         buttonA.setText(question.get("answerA").toString());
         buttonB.setText(question.get("answerB").toString());
         buttonC.setText(question.get("answerC").toString());
         buttonD.setText(question.get("answerD").toString());
+        nameTeam.setText(team.get("name").toString());
+
+        if((Long)question.get("type") == 1) {
+            File file = new File(question.get("picture").toString());
+            Image picture = new Image(file.toURI().toString());
+            image.setImage(picture);
+        }
         time = (Long)question.get("time");
         labelTime.setText(time.toString());
         countTime = new CountTime(labelTime, time);
@@ -66,36 +84,38 @@ public class TClosedQuestionController {
     }
     public TClosedQuestionController() {}
 
-    public void OnActionButtonA(ActionEvent actionEvent) {
+    public void OnActionButtonA(ActionEvent actionEvent) throws Exception {
         setButtons("answerA", "answerB", "answerC", "answerD", buttonA, buttonB, buttonC, buttonD);
     }
 
-    public void OnActionButtonB(ActionEvent actionEvent) {
+    public void OnActionButtonB(ActionEvent actionEvent) throws Exception {
         setButtons("answerB", "answerA", "answerC", "answerD", buttonB, buttonA, buttonC, buttonD);
     }
 
 
-    public void OnActionButtonC(ActionEvent actionEvent) {
+    public void OnActionButtonC(ActionEvent actionEvent) throws Exception {
         setButtons("answerC", "answerB", "answerA", "answerD", buttonC, buttonB, buttonA, buttonD);
     }
 
-    public void OnActionButtonD(ActionEvent actionEvent) {
+    public void OnActionButtonD(ActionEvent actionEvent) throws Exception {
         setButtons("answerD", "answerB", "answerC", "answerA", buttonD, buttonB, buttonC, buttonA);
     }
 
     public void OnMouseClicked(MouseEvent mouseEvent) {
         question = ((Map)Main.questions.get(Main.counterQuestion));
         Main.counterQuestion++;
+        Main.counterTeam++;
+        if(Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
         if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
         System.out.println((Long)question.get("type"));
         new NewScene().setScene(mouseEvent, (Long)question.get("type"));
     }
 
-    public void setButtons(String clicked_answer, String a2, String a3, String a4, Button clicked, Button b2, Button b3, Button b4)
-    {
+    public void setButtons(String clicked_answer, String a2, String a3, String a4, Button clicked, Button b2, Button b3, Button b4) throws Exception {
         countTime.seconds = 0l;
         if(question.get(clicked_answer).toString().equals(question.get("correctAnswer").toString())){
             clicked.setStyle("-fx-background-color: #4CAF50"); //green
+            Main.setPoints(Main.counterTeam, 1);
         }
         else if (question.get(a2).toString().equals(question.get("correctAnswer").toString()))
         {
@@ -131,14 +151,5 @@ public class TClosedQuestionController {
                 }
             }
         });
-
-
-
-
-        // Set position of second window, related to primary window.
-        /*newWindow.setX(primaryStage.getX() + 200);
-        newWindow.setY(primaryStage.getY() + 100);
-
-        newWindow.show();*/
     }
 }

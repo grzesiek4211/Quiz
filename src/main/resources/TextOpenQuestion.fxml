@@ -42,6 +42,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Button fx:id="buttonWynik" mnemonicParsing="false" onAction="#OnActionWynik" text="Wyniki!" />
+            <Label fx:id="nameTeam" text="Label" />
          </children>
       </HBox>
     </children>

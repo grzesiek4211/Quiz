@@ -48,5 +48,10 @@
             <Image url="@../../Style/images/petroturniej.jpg" />
          </image>
       </ImageView>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <Label text="Label" />
+         </children>
+      </HBox>
     </children>
 </GridPane>

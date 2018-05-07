@@ -66,5 +66,6 @@
          <image>
             <Image url="@../../Style/images/petroturniej.jpg" />
          </image></ImageView>
+      <Button fx:id="teamName" mnemonicParsing="false" text="Button" />
    </children>
 </GridPane>
