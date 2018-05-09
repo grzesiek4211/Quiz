@@ -1,3 +1,7 @@
+.root {
+    -fx-background-image: url("images/tlo2.png");
+}
+
 .button {
     -fx-background-color: #008CBA; /* Blue */
     -fx-border: none;
@@ -10,6 +14,7 @@
 
 .label {
     -fx-font-size: 25px;
+    -fx-text-fill: #ffffff;
 }
 
 .time {

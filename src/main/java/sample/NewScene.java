@@ -48,7 +48,7 @@ public class NewScene {
                 Parent TextWithPictureClosedQuestion = FXMLLoader.load(getClass().getResource("/TextWithPictureClosedQuestion.fxml"));
                 stage.setScene(new Scene(TextWithPictureClosedQuestion));
             }
-            else if (type == 2)
+            else if (type == 2 || type == 3)
             {
                 Parent TextOpenQuestion = FXMLLoader.load(getClass().getResource("/TextOpenQuestion.fxml"));
                 stage.setScene(new Scene(TextOpenQuestion));
@@ -86,7 +86,7 @@ public class NewScene {
                 Parent TextWithPictureClosedQuestion = FXMLLoader.load(getClass().getResource("/TextWithPictureClosedQuestion.fxml"));
                 stage.setScene(new Scene(TextWithPictureClosedQuestion));
             }
-            else if (type == 2)
+            else if (type == 2 || type == 3)
             {
                 Parent TextOpenQuestion = FXMLLoader.load(getClass().getResource("/TextOpenQuestion.fxml"));
                 stage.setScene(new Scene(TextOpenQuestion));

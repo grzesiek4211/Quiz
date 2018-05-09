@@ -18,11 +18,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import sample.CountTime;
 import sample.Main;
 import sample.NewScene;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Timer;
@@ -101,21 +106,29 @@ public class TClosedQuestionController {
         setButtons("answerD", "answerB", "answerC", "answerA", buttonD, buttonB, buttonC, buttonA);
     }
 
-    public void OnMouseClicked(MouseEvent mouseEvent) {
-        question = ((Map)Main.questions.get(Main.counterQuestion));
+    public void OnMouseClicked(MouseEvent mouseEvent) throws Exception {
+        question = ((Map) Main.questions.get(Main.counterQuestion));
         Main.counterQuestion++;
         Main.counterTeam++;
-        if(Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
-        if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
-        System.out.println((Long)question.get("type"));
+        if (Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
+        if (Main.questions.size() > Main.counterQuestion) question = ((Map) Main.questions.get(Main.counterQuestion));
+        System.out.println((Long) question.get("type"));
+
+        if(Main.counterQuestion == 20)
+        {
+            Main.obj = new JSONParser().parse(new FileReader("data.json"));
+            Main.json = (JSONObject) Main.obj;
+            Main.teams = (JSONArray) Main.json.get("teams");
+        }
         new NewScene().setScene(mouseEvent, (Long)question.get("type"));
     }
 
     public void setButtons(String clicked_answer, String a2, String a3, String a4, Button clicked, Button b2, Button b3, Button b4) throws Exception {
         countTime.seconds = 0l;
+
         if(question.get(clicked_answer).toString().equals(question.get("correctAnswer").toString())){
             clicked.setStyle("-fx-background-color: #4CAF50"); //green
-            Main.setPoints(Main.counterTeam, 1);
+            Main.setPoints(Main.counterTeam, 10);
         }
         else if (question.get(a2).toString().equals(question.get("correctAnswer").toString()))
         {

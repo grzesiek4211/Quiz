@@ -8,12 +8,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.CountTime;
 import sample.Main;
 import sample.NewScene;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
@@ -31,12 +34,15 @@ public class TOpenQuestionController {
     public Button buttonWynik;
     @FXML
     public Label nameTeam;
+    @FXML
+    public ImageView image;
 
     public Map question;
     public Map team;
 
     public CountTime countTime;
 
+    static public int A = 0;
 
 
     Long time;
@@ -47,6 +53,11 @@ public class TOpenQuestionController {
     {
         question = ((Map)Main.questions.get(Main.counterQuestion));
         team = ((Map)Main.teams.get(Main.counterTeam));
+        if((Long)question.get("type") == 3) {
+            File file = new File(question.get("picture").toString());
+            Image picture = new Image(file.toURI().toString());
+            image.setImage(picture);
+        }
         time = (Long)question.get("time");
         labelTime.setText(time.toString());
         nameTeam.setText(team.get("name").toString());
@@ -57,25 +68,34 @@ public class TOpenQuestionController {
     }
 
     public void OnMouseClicked(MouseEvent mouseEvent) {
-        /*Main.counterQuestion++;
         question = ((Map)Main.questions.get(Main.counterQuestion));
-        new NewScene().setScene(mouseEvent, (Long)question.get("type"));*/
-    }
-
-    public void OnActionDobrze(ActionEvent actionEvent) throws Exception {
-        question = ((Map)Main.questions.get(Main.counterQuestion));
-        Main.setPoints(Main.counterTeam, 1);
         Main.counterQuestion++;
         Main.counterTeam++;
         if(Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
         if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
         System.out.println((Long)question.get("type"));
+        new NewScene().setScene(mouseEvent, (Long)question.get("type"));
+    }
+
+    public void OnActionDobrze(ActionEvent actionEvent) throws Exception {
+        question = ((Map)Main.questions.get(Main.counterQuestion));
+        System.out.println(A);
+        int pk= 10+A*5;
+        System.out.println(pk);
+        Main.setPoints(Main.counterTeam, pk);
+        A=0;
+        Main.counterQuestion++;
+        Main.counterTeam++;
+        if(Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
+        if (Main.questions.size() > Main.counterQuestion) question = ((Map)Main.questions.get(Main.counterQuestion));
+        //System.out.println((Long)question.get("type"));
         //new NewScene().setScene(actionEvent, (Long)question.get("type"));
         Main.ns.setScene(actionEvent, (Long)question.get("type"));
     }
 
     public void OnActionZle(ActionEvent actionEvent) {
         Main.counterTeam++;
+        A++;
         if(Main.teams.size() <= Main.counterTeam) Main.counterTeam = 0;
         question = ((Map)Main.questions.get(Main.counterQuestion));
         new NewScene().setScene(actionEvent, (Long)question.get("type"));

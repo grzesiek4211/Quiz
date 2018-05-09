@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -27,7 +28,7 @@
                 <Label fx:id="labelTime" onMouseClicked="#OnMouseClicked" styleClass="time" />
             </children>
         </HBox>
-        <Label fx:id="labelDescription" text="Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker" textAlignment="CENTER" wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+        <Label fx:id="labelDescription" alignment="CENTER" contentDisplay="TOP" text="" textAlignment="CENTER" wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="1" />
         <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
             <children>
                 <HBox alignment="BOTTOM_RIGHT" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
@@ -45,5 +46,6 @@
             <Label fx:id="nameTeam" text="Label" />
          </children>
       </HBox>
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
     </children>
 </GridPane>
