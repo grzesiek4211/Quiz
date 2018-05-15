@@ -32,34 +32,11 @@ public class Main extends Application {
 
         setStaticVariable();
 
-
-        /*Map question = ((Map)questions.get(0));
-        System.out.println("Polecenie zerowego elementu tablicy questions: " + question.get("description"));
-        Long ddd =  (Long)question.get("time");
-        System.out.println(ddd);
-        String test = question.get("description").toString();
-        System.out.println(test);
-        Map team = ((Map)teams.get(0));
-        System.out.println("Nazwa zerowego elementu tablicy teams: " + team.get("name"));*/
-
         /********************* FXML ***************************/
         Parent MainPage = FXMLLoader.load(getClass().getResource("/MainPage.fxml"));
-        /*Parent TextClosedQuestion = FXMLLoader.load(getClass().getResource("/TextClosedQuestion.fxml"));
-        Parent TextWithPictureClosedQuestion = FXMLLoader.load(getClass().getResource("/TextWithPictureClosedQuestion.fxml"));
-        Parent TextOpenQuestion = FXMLLoader.load(getClass().getResource("/TextOpenQuestion.fxml"));
-        Parent TextWithPictureOpenQuestion = FXMLLoader.load(getClass().getResource("/TextWithPictureOpenQuestion.fxml"));
-        Parent Results = FXMLLoader.load(getClass().getResource("/Results.fxml"));*/
         primaryStage.setTitle("PetroTurniej");
         primaryStage.setScene(new Scene(MainPage));
 
-
-
-        //primaryStage.setScene(new Scene(TextWithPictureClosedQuestion));
-        //primaryStage.setScene(new Scene(TextWithPictureOpenQuestion));
-        //primaryStage.setScene(new Scene(TextOpenQuestion));
-        //primaryStage.setScene(new Scene(TextWithPictureClosedQuestion));
-        //primaryStage.setScene(new Scene(TextClosedQuestion));
-        //primaryStage.setScene(new Scene(Results));
         primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("");
         primaryStage.show();
